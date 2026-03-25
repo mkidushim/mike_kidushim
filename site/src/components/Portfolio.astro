@@ -1,0 +1,249 @@
+---
+import { Image } from 'astro:assets';
+import zorakleLogo from '../assets/zorakle.png';
+import usmaLogo from '../assets/usma.png';
+import wallOfHonorLogo from '../assets/mission_webapp2.png';
+import sicLogo from '../assets/sic.png';
+import fusionLogo from '../assets/fusion_internal.png';
+import murderPointLogo from '../assets/murderpoint.png';
+
+interface Project {
+  title: string;
+  description: string;
+  highlights: string[];
+  image: ImageMetadata;
+  tags: string[];
+  confidential?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    title: "Zorakle",
+    description: "Built new SaaS platform while converting legacy system to modern architecture",
+    highlights: [
+      "Full-stack SaaS development",
+      "Legacy system modernization",
+      "Cloud infrastructure"
+    ],
+    image: zorakleLogo,
+    tags: ["SaaS", "Legacy Conversion", "Full-Stack"]
+  },
+  {
+    title: "Murder Point Oysters",
+    description: "E-commerce custom Shopify site with seamless checkout and inventory management",
+    highlights: [
+      "Custom Shopify development",
+      "E-commerce optimization",
+      "Payment integration"
+    ],
+    image: murderPointLogo,
+    tags: ["E-Commerce", "Shopify", "Frontend"]
+  },
+  {
+    title: "Consumer Attorney Marketing Group",
+    description: "Comprehensive data pipelines, call center routing system, analytics dashboards, and custom CRM with legacy system conversion",
+    highlights: [
+      "Data pipeline architecture",
+      "Call center routing automation",
+      "Custom CRM system",
+      "Legacy modernization"
+    ],
+    confidential: true,
+    tags: ["Backend", "Data", "CRM", "Automation"]
+  },
+  {
+    title: "Center for Innovative Public Health Research",
+    description: "Analytics dashboards, SMS automation programs, and custom blog platform",
+    highlights: [
+      "Real-time dashboards",
+      "SMS campaign automation",
+      "Custom CMS",
+      "Analytics reporting"
+    ],
+    confidential: true,
+    tags: ["Dashboards", "Automation", "Backend"]
+  },
+  {
+    title: "MyTravelMedic",
+    description: "MVP for emergency room check-in system enabling patients to pre-register before arrival",
+    highlights: [
+      "Healthcare MVP",
+      "Real-time check-in system",
+      "Patient management",
+      "Quick deployment"
+    ],
+    image: zorakleLogo,
+    tags: ["Healthcare", "MVP", "Full-Stack"]
+  },
+  {
+    title: "United States Motor Sports Association",
+    description: "Track and waiver management system that enables digital form collection, reducing signup time by 20%",
+    highlights: [
+      "Digital waiver management",
+      "20% signup time reduction",
+      "Track management portal",
+      "Form automation"
+    ],
+    image: usmaLogo,
+    tags: ["Management System", "Automation", "Forms"]
+  },
+  {
+    title: "Wall of Honor",
+    description: "E-commerce donation platform for breast cancer awareness featuring admin portal, web app, and tvOS application",
+    highlights: [
+      "Multi-platform deployment",
+      "Admin portal",
+      "tvOS application",
+      "Donation processing"
+    ],
+    image: wallOfHonorLogo,
+    tags: ["E-Commerce", "Charity", "Multi-Platform"]
+  },
+  {
+    title: "Southern Industrial Constructors",
+    description: "Admin portal and backend infrastructure supporting iOS and web applications",
+    highlights: [
+      "Admin dashboard",
+      "Backend API",
+      "iOS integration",
+      "Web application support"
+    ],
+    image: sicLogo,
+    tags: ["Backend", "Admin Portal", "Mobile"]
+  },
+  {
+    title: "Fusion of Ideas",
+    description: "Internal tools suite for operational efficiency and team collaboration",
+    highlights: [
+      "Internal platform",
+      "Team collaboration",
+      "Operational tools",
+      "Custom workflows"
+    ],
+    image: fusionLogo,
+    tags: ["Internal Tools", "Backend"]
+  }
+];
+---
+
+<section id="portfolio" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    {/* Header */}
+    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+        Recent Projects
+      </h2>
+      <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
+        A selection of recent projects spanning SaaS platforms, e-commerce solutions, data systems, and custom applications
+      </p>
+    </div>
+
+    {/* Projects Grid */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+      {projects.map((project) => (
+        <div class="group relative bg-white border border-gray-200 rounded-lg sm:rounded-xl overflow-hidden hover:border-blue-400 hover:shadow-2xl transition-all duration-300 flex flex-col">
+          {/* Image Container */}
+          <div class="relative w-full h-40 sm:h-44 lg:h-48 bg-gray-100 overflow-hidden">
+            {project.confidential ? (
+              <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center backdrop-blur-xl relative">
+                <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23666%22 width=%22100%22 height=%22100%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23999%22/></svg>')"></div>
+                <div class="relative z-10 text-center">
+                  <svg class="w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 text-gray-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <p class="text-gray-600 text-xs sm:text-sm font-semibold">Confidential</p>
+                </div>
+              </div>
+            ) : (
+              <Image
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            )}
+          </div>
+
+          {/* Content */}
+          <div class="p-4 sm:p-5 lg:p-6 flex flex-col flex-grow">
+            {/* Title */}
+            <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p class="text-xs sm:text-sm lg:text-sm text-gray-600 leading-relaxed mb-3 sm:mb-4 flex-grow line-clamp-3">
+              {project.description}
+            </p>
+
+            {/* Highlights */}
+            <ul class="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
+              {project.highlights.map((highlight, idx) => (
+                idx < 3 && (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-3.5 sm:w-4 h-3.5 sm:h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-xs sm:text-sm text-gray-700">{highlight}</span>
+                  </li>
+                )
+              ))}
+            </ul>
+
+            {/* Tags */}
+            <div class="flex flex-wrap gap-1.5 sm:gap-2">
+              {project.tags.map((tag, idx) => (
+                idx < 2 && (
+                  <span class="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">
+                    {tag}
+                  </span>
+                )
+              ))}
+              {project.tags.length > 2 && (
+                <span class="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full">
+                  +{project.tags.length - 2}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Bottom CTA */}
+    <div class="mt-12 sm:mt-16 lg:mt-20 text-center">
+      <p class="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+        Interested in working on your next project?
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center gap-2 sm:gap-3 bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+      >
+        Get in touch
+        <svg
+          class="w-4 sm:w-5 h-4 sm:h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+

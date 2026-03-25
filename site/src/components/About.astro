@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import mikeHeadshot from '../assets/mike.jpeg';
+---
+
+<section id="about" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+      {/* Image */}
+      <div class="flex justify-center lg:justify-start">
+        <div class="relative w-full max-w-sm">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl blur-2xl opacity-20"></div>
+          <Image
+            src={mikeHeadshot}
+            alt="Mike Kidushim"
+            class="relative w-full rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+
+      {/* Content */}
+      <div class="flex flex-col justify-center">
+
+        <div class="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
+          <p>
+            I am a full-stack developer with over 10 years of experience building scalable web applications. With a background in computer science and expertise as both a software architect and developer, I create fast, clean, and maintainable solutions that scale.
+          </p>
+
+          <p>
+            I have successfully delivered 20+ projects for clients ranging from solo founders and startups to growing companies across diverse industries. Whether you need a small business website, internal dashboards, custom APIs, or a complete web application, I can help you deliver a seamless and engaging experience to your users.
+          </p>
+        </div>
+
+        {/* CTA Button */}
+        <div class="mt-8 sm:mt-10">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2 sm:gap-3 bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+          >
+            Let's work together
+            <svg
+              class="w-4 sm:w-5 h-4 sm:h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </a>
+        </div>
+
+        {/* Quick Facts */}
+        <div class="mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-gray-200 grid grid-cols-3 gap-4 sm:gap-6">
+          <div>
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600">10+</div>
+            <p class="text-xs sm:text-sm text-gray-600 mt-1">Years Experience</p>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600">20+</div>
+            <p class="text-xs sm:text-sm text-gray-600 mt-1">Projects Delivered</p>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600">CTO</div>
+            <p class="text-xs sm:text-sm text-gray-600 mt-1">Leadership Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
