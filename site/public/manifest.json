@@ -1,0 +1,26 @@
+{
+  "name": "Mike Kidushim - Full-Stack Developer",
+  "short_name": "Mike Kidushim",
+  "description": "Full-stack developer with 10+ years of experience building scalable web applications",
+  "start_url": "/mike_kidushim/",
+  "scope": "/mike_kidushim/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/mike_kidushim/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/mike_kidushim/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+
