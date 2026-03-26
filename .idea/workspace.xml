@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2fe1fe4-beb6-4c66-9211-6872c5182ae0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SEO_OPTIMIZATION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/public/robots.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/src/components/About.astro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/src/components/Contact.astro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/src/components/Header.astro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/src/components/Portfolio.astro" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/src/components/Services.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/src/utils/seo.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/site/tailwind.config.cjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/.env" beforeDir="false" afterPath="$PROJECT_DIR$/site/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/site/astro.config.mjs" afterDir="false" />

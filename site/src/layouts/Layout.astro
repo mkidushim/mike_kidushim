@@ -1,23 +1,102 @@
 ---
 import Header from '../components/Header.astro';
 import '../styles/global.css'
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title = "Mike Kidushim | Full-Stack Developer & Software Architect",
+  description = "Full-stack developer with 10+ years of experience. I build fast, scalable web applications and help modernize legacy systems. Hire me for your next project.",
+  image = "https://mkidushim.github.io/mike_kidushim/og-image.jpg"
+} = Astro.props;
+
+const siteUrl = "https://mkidushim.github.io/mike_kidushim/";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mike Kidushim",
+  "url": siteUrl,
+  "description": description,
+  "jobTitle": "Full-Stack Developer & Software Architect",
+  "image": image,
+  "sameAs": [
+    "https://twitter.com",
+    "https://github.com",
+    "https://linkedin.com"
+  ]
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Core Meta Tags -->
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="full-stack developer, web development, software architect, React, Node.js, legacy modernization" />
+		<meta name="author" content="Mike Kidushim" />
+		<meta name="robots" content="index, follow" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalUrl} />
+		
+		<!-- Open Graph Tags -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content="Mike Kidushim | Full-Stack Developer" />
+		<meta property="og:locale" content="en_US" />
+		
+		<!-- Twitter Card Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:creator" content="@yourTwitterHandle" />
+		
+		<!-- Additional Meta Tags -->
+		<meta name="theme-color" content="#2563eb" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<!-- Favicons -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/favicon.ico" />
+		
+		<!-- Title -->
+		<title>{title}</title>
+		
+		<!-- Astro Generator -->
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+		
+		<!-- Preconnect to external domains (if needed) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://cdn.example.com" />
 	</head>
 	<body class="bg-white">
 		<Header />
 		<main>
 			<slot />
 		</main>
+		
+		<!-- Footer with structured data -->
+		<footer class="bg-gray-900 text-gray-400 py-8 px-4 text-center text-sm">
+			<p>&copy; 2024 Mike Kidushim. All rights reserved.</p>
+		</footer>
 	</body>
 </html>
 

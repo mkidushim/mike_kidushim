@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://mkidushim.github.io/mike_kidushim/sitemap-index.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
